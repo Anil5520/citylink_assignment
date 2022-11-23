@@ -21,6 +21,7 @@ let pincodeRegex = /^[1-9][0-9]{5}$/;
 let cordRegex =/^-?([1-8]?[1-9]|[1-9]0)\.{1}\d{1,6}/;
 
 
+
 const bookingDetails = async function (req, res) {
     try {
         // data coming from request body
@@ -28,7 +29,7 @@ const bookingDetails = async function (req, res) {
 
         // body validation
         if (!isValidRequestBody(data)) {
-            return res.status(400).send({ status: false, msg: "Please provide booking details" });
+            return res.status(400).send({ status: false, message: "Please provide booking details" });
         }
 
         // validations for request field
@@ -198,7 +199,7 @@ const bookingDetails = async function (req, res) {
         }
 
         data.bookingTime = Date.now();
-        data.pickupTime = Date.now()
+        data.pickupTime = Date.now();
 
 
         // checking the existing customer or creation of customer data
